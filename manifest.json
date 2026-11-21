@@ -1,0 +1,24 @@
+{
+  "name": "DOMINO - Manajemen Tugas & Simulator Efek Domino",
+  "short_name": "DOMINO",
+  "description": "Aplikasi anti-nunda tugas SMA & SMK dengan notifikasi teror guru dan simulator efek domino.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#ef4444",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
