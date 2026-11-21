@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#ef4444" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="DOMINO" />
+  <title>DOMINO - Anti-Procrastination & Domino Simulator</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" href="./icon.png" />
+  <link rel="apple-touch-icon" href="./icon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header & Kontrol Cepat -->
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo">🦉 DOMINO</span>
+      <span class="badge">SMA / SMK Edition</span>
+    </div>
+    <div class="header-actions">
+      <button id="installBtn" class="btn btn-primary hidden">📲 Install App</button>
+      <button id="iosInstallHintBtn" class="btn btn-secondary hidden">🍏 Cara Install iOS</button>
+      <button id="notifPermBtn" class="btn btn-warning">🔔 Aktifkan Teror</button>
+      <button id="themeToggle" class="btn btn-icon" title="Ganti Tema Gelap/Terang">🌓</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Banner Profil Siswa & Mental Load Meter -->
+    <section class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <h2>👤 Profil Siswa</h2>
+          <button id="editProfileBtn" class="btn btn-sm">Edit Profil</button>
+        </div>
+        <div id="profileDisplay" class="profile-info">
+          <p class="empty-state">Belum ada data siswa. Klik "Edit Profil" untuk mengisi data SMA/SMK kamu.</p>
+        </div>
+        <form id="profileForm" class="hidden form-stack">
+          <input type="text" id="pName" placeholder="Nama Lengkap" required />
+          <input type="text" id="pSchool" placeholder="Nama Sekolah (misal: SMKN 1 / SMAN 2)" required />
+          <input type="text" id="pMajor" placeholder="Jenjang & Jurusan (misal: XII RPL / XI MIPA)" required />
+          <input type="number" id="pTarget" placeholder="Target Belajar Harian (Jam)" min="1" max="16" required />
+          <button type="submit" class="btn btn-primary">Simpan Profil</button>
+        </form>
+      </div>
+
+      <!-- Kalkulator Beban Mental & Panic Button -->
+      <div class="card">
+        <div class="card-header">
+          <h2>📊 Skor Beban Mental</h2>
+          <button id="panicBtn" class="btn btn-danger">🚨 PANIC BUTTON</button>
+        </div>
+        <div class="meter-container">
+          <div class="meter-bar">
+            <div id="mentalLoadFill" class="meter-fill" style="width: 0%;"></div>
+          </div>
+          <div class="meter-stats">
+            <span id="mentalLoadPercent">0%</span>
+            <span id="mentalLoadStatus">Aman Terkendali</span>
+          </div>
+        </div>
+        <div id="panicScheduleBox" class="panic-box hidden"></div>
+      </div>
+    </section>
+
+    <!-- Simulator Efek Domino & Mode Fokus -->
+    <section class="grid-2">
+      <div class="card">
+        <h2>🔄 Simulator Efek Domino</h2>
+        <p class="subtext">Geser simulasi keterlambatan untuk menghitung dampak berantai pada tugas-tugas berikutnya:</p>
+        <div class="slider-group">
+          <label for="delaySlider">Simulasi Telat Awal: <strong id="delayValue">+0 Jam</strong></label>
+          <input type="range" id="delaySlider" min="0" max="72" value="0" />
+        </div>
+        <div id="dominoImpactList" class="impact-list">
+          <p class="empty-state">Tambahkan minimal 1 tugas untuk menjalankan simulasi.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>⏱️ Mode Fokus Kustom</h2>
+        <div class="timer-display" id="timerDisplay">25:00</div>
+        <div class="timer-controls">
+          <input type="number" id="customMinutes" value="25" min="1" max="180" />
+          <span>menit</span>
+          <button id="startTimerBtn" class="btn btn-primary">Mulai</button>
+          <button id="resetTimerBtn" class="btn btn-secondary">Reset</button>
+        </div>
+        <div class="silent-toggle">
+          <label>
+            <input type="checkbox" id="silentModeToggle" />
+            🔕 Mode Alarm Senyap (Hanya Visual & Getar)
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Tambah Tugas & Time-Blocking -->
+    <section class="card">
+      <h2>📝 Tambah Tugas, Praktikum, atau Proyek PKL</h2>
+      <form id="taskForm" class="task-grid-form">
+        <input type="text" id="tTitle" placeholder="Nama Tugas / Laporan Bengkel / Proyek" required />
+        <input type="text" id="tSubject" placeholder="Mata Pelajaran / Bengkel" required />
+        
+        <select id="tPersona" required>
+          <option value="killer">🔥 Tegas / Killer</option>
+          <option value="sarkas">😏 Sarkas / Sindiran Halus</option>
+          <option value="disiplin">⏰ Disiplin / Perfeksionis</option>
+          <option value="ramah">🤝 Ramah tapi Menagih (Ala Duolingo)</option>
+          <option value="bengkel">🔧 Instruktur Bengkel / Lab (Khas SMK)</option>
+          <option value="misterius">👻 Misterius / Silent Killer</option>
+          <option value="motivator">📢 Ceramah Panjang / Motivator</option>
+          <option value="custom">💬 Custom Persona (Jargon Guru Sendiri)</option>
+        </select>
+
+        <input type="text" id="tCustomQuote" class="hidden" placeholder="Masukkan kalimat khas gurumu..." />
+
+        <div>
+          <label class="small-label">Mulai Pengerjaan (Time-Block)</label>
+          <input type="datetime-local" id="tStart" required />
+        </div>
+        <div>
+          <label class="small-label">Deadline Pengumpulan</label>
+          <input type="datetime-local" id="tDeadline" required />
+        </div>
+        <div>
+          <label class="small-label">Estimasi Durasi (Jam)</label>
+          <input type="number" id="tDuration" min="0.5" step="0.5" value="2" required />
+        </div>
+        <div>
+          <label class="small-label">Ketergantungan (Setelah Tugas)</label>
+          <select id="tDependency">
+            <option value="">-- Tidak Ada (Tugas Independen) --</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary full-span">+ Jadwalkan & Aktifkan Pengawasan</button>
+      </form>
+    </section>
+
+    <!-- Daftar Tugas & Uji Notifikasi Teror -->
+    <section class="card">
+      <div class="card-header">
+        <h2>📋 Daftar Tugas & Rantai Ketergantungan</h2>
+        <span id="stabilityIndex" class="badge">Indeks Stabilitas: 100%</span>
+      </div>
+      <div id="taskList" class="task-list">
+        <p class="empty-state">Belum ada tugas. Semua data tersimpan lokal di perangkatmu.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notifikasi Dalam Aplikasi -->
+  <div id="inAppToast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
