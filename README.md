@@ -11,7 +11,7 @@
 * **Platform Publikasi:** GitHub Pages
 
 ## 3. Pemanfaatan AI (*AI Usage Disclosure*)
-* **Alat AI yang Digunakan:** Gemini
+* **Alat AI yang Digunakan:** Gemini, ChatGPT
 * **Contoh Perintah (*Prompt*) Utama:**
   * *"Bantu buatkan kerangka dasar HTML dan CSS untuk aplikasi planner tugas sekolah berbasis PWA yang responsif di layar HP dengan tema gelap."*
   * *"Buatkan logika JavaScript untuk menghitung sisa waktu aman (slack time) dan menyusun urutan prioritas tugas berdasarkan bobot nilai rapor."*
