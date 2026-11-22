@@ -3,7 +3,7 @@
 * **Nama Aplikasi:** DOMIFECT (*Academic & Vocational Domino Effect Planner*)
 * **Nama Siswa / Pengembang:** Hiranya Jasmine Ramadhani
 * **Jenjang:** SMA
-* **AI yang Digunakan:** Gemini,ChatGPT
+* **AI yang Digunakan:** Gemini, ChatGPT
 
 ## Tahap 1: Eksplorasi Ide & Perancangan Solusi
 **Tujuan Interaksi:** Menggali ide dan merancang konsep aplikasi web pengingat jadwal serta tugas sekolah yang berbeda dari aplikasi pencatat biasa, mengingat siswa sering menunda tugas hingga akhirnya menumpuk menjelang tenggat waktu (*deadline*).
