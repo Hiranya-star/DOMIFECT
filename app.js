@@ -601,229 +601,428 @@ const terrorMatrix = {
 // 50 pesan tambahan untuk setiap karakter guru: 10 pembuka x 5 inti.
 // Gaya pesan tetap jenaka dan suportif, bukan ancaman atau penghinaan.
 const extraTerrorBank = {
-  killer: {
-    a: [
-      "🚨 Panggilan tugas darurat dari {teacher} masuk!",
-      "🔔 Radar deadline mendeteksi tugasmu belum bergerak!",
-      "Perhatian penuh, {teacher} sedang mengecek daftar progres kelas!",
-      "Breaking news dari meja guru {teacher}: namamu masih kosong!",
-      "Status tugasmu terpantau merah di sistem akademik!",
-      "Tim penyelamat nilai rapor memanggilmu sekarang!",
-      "Ada sinyal peringatan keras dari mata pelajaran {subject}!",
-      "Alarm akademik berbunyi khusus untuk menyadarkanmu!",
-      "{teacher} mengirim pengingat prioritas tingkat tinggi!",
-      "Operasi penyelamatan nilai akhir resmi dimulai!"
-    ],
-    b: [
-      "tugas '{title}' untuk {subject} masih menunggu sentuhan terakhirmu.",
-      "misi '{title}' belum juga berubah menjadi status selesai.",
-      "deadline '{title}' makin dekat—jangan biarkan kalender yang mengerjakannya.",
-      "progres '{title}' harus segera ditambah sebelum waktu habis.",
-      "'{title}' sedang antre di urutan teratas untuk dituntaskan detik ini.",
-      "berkas '{title}' milikmu masih ditandai belum dikumpulkan oleh {teacher}.",
-      "nilai {subject} sangat bergantung pada ketuntasan '{title}' hari ini.",
-      "menunda '{title}' hanya akan memperbesar tumpukan bebanmu nanti."
-    ]
-  },
-  sarcastic: {
-    a: [
-      "Wah, tugasmu sepertinya sedang menikmati liburan panjang ya?",
-      "Halo pejuang rebahan, kalender dan jam dinding ingin bicara.",
-      "File tugasmu sedang kesepian menunggu diajak kenalan.",
-      "{teacher} menitipkan salam hangat dari dunia deadline.",
-      "Katanya mau produktif hari ini? Ini dia panggung utamamu.",
-      "Tugasmu baru saja mengirim surat: katanya kangen dikerjakan.",
-      "Waktu terus berjalan tanpa menunggu inspirasi turun dari langit.",
-      "Ada yang merasa santai padahal punya tanggungan {subject}?",
-      "Kursi dan meja belajar sudah lama merindukan kehadiranmu.",
-      "Notifikasi ini disponsori oleh deadline yang makin mepet."
-    ],
-    b: [
-      "'{title}' belum selesai, mungkin dia menunggu kekuatan telepati.",
-      "tugas {subject} itu belum memiliki fitur mengerjakan dirinya sendiri.",
-      "'{title}' masih betah di daftar aktif, belum pindah ke arsip selesai.",
-      "progres tugasmu tampaknya sedang mengambil cuti tahunan.",
-      "{teacher} tentu lebih senang melihat file tugas daripada alasan baru.",
-      "kalau '{title}' terus ditatap saja, halamannya tidak akan bertambah.",
-      "waktu sisa untuk '{title}' makin ramping, tidak seperti daftar alasanmu.",
-      "menunggu keajaiban di menit terakhir bukan strategi terbaik untuk '{title}'."
-    ]
-  },
-  disciplined: {
-    a: [
-      "⏱️ Pemeriksaan kedisiplinan jadwal akademik dimulai.",
-      "Sistem manajemen waktu mencatat progres pengerjaanmu.",
-      "Laporan ketepatan waktu dari {teacher} telah diterima.",
-      "Alarm presisi waktu aktif untuk mata pelajaran {subject}.",
-      "Jadwal harian meminta pembaruan status penyelesaian.",
-      "Pusat kendali deadline memanggilmu untuk eksekusi.",
-      "Waktu adalah aset paling berharga yang terus berkurang.",
-      "Evaluasi target belajar: saatnya bertindak sesuai rencana.",
-      "{teacher} menekankan pentingnya konsistensi dan ketepatan waktu.",
-      "Mode disiplin tinggi resmi diaktifkan sekarang."
-    ],
-    b: [
-      "tugas '{title}' wajib masuk ke prioritas eksekusi teratasmu.",
-      "target '{title}' belum mencapai status tuntas sesuai jadwal.",
-      "durasi pengerjaan '{title}' perlu segera dieksekusi bertahap.",
-      "'{title}' berpotensi memicu efek domino ke tugas lain jika ditunda.",
-      "progres {subject} harus diperbarui agar stabilitas jadwalmu terjaga.",
-      "setiap menit yang terlewat mengurangi margin aman '{title}'.",
-      "kepatuhan pada jadwal kerja akan menyelamatkan nilai '{title}'.",
-      "segera selesaikan '{title}' agar rantai jadwalmu tetap stabil 100%."
-    ]
-  },
-  friendly: {
-    a: [
-      "Hai! Ada pengingat hangat dari {teacher} nih.",
-      "Halo, semoga harimu lancar dan penuh semangat!",
-      "🌻 Semangat belajar ya, waktunya cek progres tugasmu.",
-      "{teacher} mengirimkan dukungan positif untukmu hari ini.",
-      "Hei, yuk luangkan sedikit waktu untuk mencicil tugasmu.",
-      "Satu pengingat ramah agar kamu tidak kelelahan nanti.",
-      "Kamu sudah melangkah sejauh ini, sekarang lanjutkan sedikit lagi.",
-      "Salam semangat dari kelas {subject}!",
-      "Yuk, intip kembali daftar tugasmu sebelum menumpuk.",
-      "Kamu pasti bisa menyelesaikannya langkah demi langkah!"
-    ],
-    b: [
-      "'{title}' masih menunggu progres terbaik darimu.",
-      "meluangkan 15 menit untuk {subject} sekarang akan sangat membantu.",
-      "kamu bisa memecah '{title}' menjadi bagian-bagian kecil yang mudah.",
-      "jangan lupa sisakan waktu untuk mengecek ulang '{title}'.",
-      "{teacher} sangat menghargai usaha dan proses belajarmu.",
-      "menyelesaikan '{title}' lebih awal akan membuat pikiranmu jauh lebih lega.",
-      "ayo cicil '{title}' pelan-pelan agar nanti malam bisa istirahat tenang.",
-      "satu langkah kecil pada '{title}' hari ini adalah kemajuan besar."
-    ]
-  },
-  vocational: {
-    a: [
-      "🧰 Panggilan dari ruang praktik & bengkel kejuruan!",
-      "Pemeriksaan SOP tugas kompetensi {subject} dimulai.",
-      "Tim kendali mutu (QC) mengingatkan status pekerjaanmu.",
-      "Laporan lembar kerja dari instruktur {teacher} telah masuk.",
-      "Mode proyek kejuruan aktif: cek daftar pekerjaanmu.",
-      "Perhatian, teknisi dan praktikan sedang dibutuhkan di meja kerja!",
-      "Checklist kompetensi kejuruan perlu segera diperbarui.",
-      "Ruang praktik mengirim notifikasi kesiapan laporan.",
-      "Jadwal produksi laporan tugas hari ini telah dimulai.",
-      "Quality control akademik memanggil operator utamanya."
-    ],
-    b: [
-      "hasil kerja '{title}' masih perlu diperiksa dan dituntaskan.",
-      "laporan praktik '{title}' belum melewati tahap pemeriksaan akhir.",
-      "proses pengerjaan '{title}' harus mengikuti standar operasional yang berlaku.",
-      "komponen tugas {subject} masih menunggu penyelesaian darimu.",
-      "'{title}' perlu dituntaskan agar target uji kompetensimu aman.",
-      "di dunia kerja nyata, ketepatan waktu '{title}' adalah bukti profesionalisme.",
-      "segera rapikan dokumentasi dan hasil '{title}' sebelum dicek {teacher}.",
-      "pastikan tidak ada langkah kerja '{title}' yang terlewat dari checklist."
-    ]
-  },
-  silentkiller: {
-    a: [
-      "...Ada satu catatan singkat dari {teacher}.",
-      "Notifikasi tenang, namun berdampak besar pada nilaimu.",
-      "{teacher} baru saja menandai daftar pengumpulan tugas.",
-      "Status akademikmu mendapat pembaruan senyap.",
-      "Tidak banyak peringatan ulang, hanya pengingat deadline.",
-      "Sistem mencatat satu tugas yang perlu segera ditinjau.",
-      "Sebuah pengingat muncul di sela aktivitasmu hari ini.",
-      "Cek kembali daftar tugas sebelum waktu pengumpulan ditutup.",
-      "Pesan singkat dari pengawas progres akademik.",
-      "🔎 Ada satu tanggungan yang diam-diam mendekati batas waktu."
-    ],
-    b: [
-      "'{title}' masih tercatat belum selesai pada mata pelajaran {subject}.",
-      "progres '{title}' belum diperbarui di sistem daftar tugasmu.",
-      "deadline '{title}' perlu mendapat perhatian serius hari ini.",
-      "tugas ini jauh lebih aman diselesaikan sebelum waktunya kritis.",
-      "{teacher} jarang menegur, namun selalu mencatat ketepatan waktumu.",
-      "jangan sampai namamu terlewat saat rekap nilai '{title}' dilakukan.",
-      "amankan status '{title}' sekarang sebelum pintu pengumpulan ditutup.",
-      "ketenangan {teacher} bukan berarti tenggat '{title}' bisa diabaikan."
-    ]
-  },
-  motivator: {
-    a: [
-      "🏆 Panggilan untuk calon lulusan hebat dan berprestasi!",
-      "Setiap progres kecil membawamu selangkah lebih dekat ke kesuksesan.",
-      "{teacher} percaya kamu punya potensi besar menuntaskan tantangan ini.",
-      "Saatnya membuktikan konsistensi diri, bukan sekadar menunggu mood.",
-      "Mental pemenang dibangun dari kebiasaan menuntaskan tugas tepat waktu.",
-      "Tantangan hari ini: taklukkan satu langkah penting sekarang!",
-      "Masa depan cerah dimulai dari disiplin kecil yang kamu lakukan hari ini.",
-      "Ayo nyalakan mode fokus dan tunjukkan kemampuan terbaikmu!",
-      "Kesempatan bertumbuh selalu hadir lewat tanggung jawab sehari-hari.",
-      "Kamu sudah bertahan sejauh ini—ayo tuntaskan sampai garis finis!"
-    ],
-    b: [
-      "'{title}' adalah latihan nyata membangun tanggung jawabmu di {subject}.",
-      "menuntaskan '{title}' akan membuktikan bahwa kamu mampu mengendalikan waktumu.",
-      "progres '{title}' hari ini adalah investasi untuk nilai rapormu nanti.",
-      "tugas {subject} ini bisa kamu taklukkan dengan fokus dan strategi tepat.",
-      "{teacher} ingin melihatmu bangga dengan hasil kerja kerasmu sendiri.",
-      "jangan biarkan rasa malas menghalangi langkahmu menyelesaikan '{title}'.",
-      "ambil kendali penuh atas '{title}' dan buktikan kamu bisa diandalkan.",
-      "setiap halaman '{title}' yang selesai adalah kemenangan kecilmu hari ini."
-    ]
-  },
-  custom: {
-    a: [
-      "📣 Pesan khusus dari {teacher}!",
-      "Pengingat personal untuk tugas pentingmu.",
-      "Ada catatan langsung dari guru {subject}.",
-      "Pesan pengingat yang kamu atur sendiri sedang aktif.",
-      "Sistem memutar ulang pesan khusus dari {teacher}.",
-      "Catatan penting untuk agenda belajarmu hari ini.",
-      "Waktunya membaca kembali pesan pengingat personalmu.",
-      "Satu pesan khusus sebelum tenggat waktu tiba.",
-      "Pengingat buatanmu sendiri muncul untuk menjagamu tetap fokus.",
-      "Jangan lewatkan pesan langsung dari {teacher}."
-    ],
-    b: [
-      "catatan pengingatnya: '{customText}' terkait tugas '{title}'.",
-      "'{customText}' — jangan lupa segera meninjau tugas '{title}'.",
-      "pesan khusus berbunyi: '{customText}' untuk tugas {subject}.",
-      "ingat baik-baik pesan ini: '{customText}' saat mengerjakan '{title}'.",
-      "'{customText}' menjadi pengingat utama untuk menuntaskan '{title}'.",
-      "segera buka tugas '{title}' dan ingat pesan: '{customText}'.",
-      "'{customText}' — ayo selesaikan '{title}' sebelum waktunya habis.",
-      "pesan dari {teacher}: '{customText}' untuk progres '{title}'."
-    ]
-  }
+  killer: [
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Ayo kerjakan sekarang!",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Jangan ditunda lagi ya.",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Waktu terus berjalan.",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Buktikan kemampuanmu!",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Segera kumpulkan ke {teacher}.",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Semangat!",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Biar tidak panik di akhir.",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Amankan nilaimu.",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Fokus 15 menit saja.",
+    "🚨 Panggilan darurat dari {teacher}! Tugas '{title}' mapel {subject} masih kosong. Segera selesaikan sebelum nilai rapormu nol! Pasti beres!",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Ayo kerjakan sekarang!",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Jangan ditunda lagi ya.",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Waktu terus berjalan.",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Buktikan kemampuanmu!",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Segera kumpulkan ke {teacher}.",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Semangat!",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Biar tidak panik di akhir.",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Amankan nilaimu.",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Fokus 15 menit saja.",
+    "🔔 Alarm {teacher} berbunyi! '{title}' ({subject}) belum ada progres. Jangan menyesal di akhir! Pasti beres!",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Ayo kerjakan sekarang!",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Jangan ditunda lagi ya.",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Waktu terus berjalan.",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Buktikan kemampuanmu!",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Segera kumpulkan ke {teacher}.",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Semangat!",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Biar tidak panik di akhir.",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Amankan nilaimu.",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Fokus 15 menit saja.",
+    "Perhatian dari {teacher}: '{title}' di {subject} menunggumu. Kerjakan sekarang juga! Pasti beres!",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Ayo kerjakan sekarang!",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Jangan ditunda lagi ya.",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Waktu terus berjalan.",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Buktikan kemampuanmu!",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Segera kumpulkan ke {teacher}.",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Semangat!",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Biar tidak panik di akhir.",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Amankan nilaimu.",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Fokus 15 menit saja.",
+    "Breaking news: {teacher} mencatat '{title}' ({subject}) belum dikumpul. Cepat selesaikan! Pasti beres!",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Ayo kerjakan sekarang!",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Jangan ditunda lagi ya.",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Waktu terus berjalan.",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Buktikan kemampuanmu!",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Segera kumpulkan ke {teacher}.",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Semangat!",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Biar tidak panik di akhir.",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Amankan nilaimu.",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Fokus 15 menit saja.",
+    "Status merah untukmu dari {teacher}! Tugas '{title}' ({subject}) harus segera diselesaikan hari ini. Pasti beres!",
+  ],
+  sarcastic: [
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Ayo kerjakan sekarang!",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Jangan ditunda lagi ya.",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Waktu terus berjalan.",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Buktikan kemampuanmu!",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Segera kumpulkan ke {teacher}.",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Semangat!",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Biar tidak panik di akhir.",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Amankan nilaimu.",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Fokus 15 menit saja.",
+    "Wah, tugas '{title}' dari {teacher} sepertinya lagi asyik liburan. Kapan mau disentuh? Pasti beres!",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Ayo kerjakan sekarang!",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Jangan ditunda lagi ya.",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Waktu terus berjalan.",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Buktikan kemampuanmu!",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Segera kumpulkan ke {teacher}.",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Semangat!",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Biar tidak panik di akhir.",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Amankan nilaimu.",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Fokus 15 menit saja.",
+    "Halo pejuang santai, '{title}' ({subject}) titip salam, katanya kangen dikerjakan. Pasti beres!",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Ayo kerjakan sekarang!",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Jangan ditunda lagi ya.",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Waktu terus berjalan.",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Buktikan kemampuanmu!",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Segera kumpulkan ke {teacher}.",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Semangat!",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Biar tidak panik di akhir.",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Amankan nilaimu.",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Fokus 15 menit saja.",
+    "Hebat ya, {teacher} nungguin '{title}' ({subject}) selesai sendiri lewat tenaga gaib. Pasti beres!",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Ayo kerjakan sekarang!",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Jangan ditunda lagi ya.",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Waktu terus berjalan.",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Buktikan kemampuanmu!",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Segera kumpulkan ke {teacher}.",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Semangat!",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Biar tidak panik di akhir.",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Amankan nilaimu.",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Fokus 15 menit saja.",
+    "Mau nunggu '{title}' beranak di daftar tugas atau mau dikerjakan sekarang? Pasti beres!",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Ayo kerjakan sekarang!",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Jangan ditunda lagi ya.",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Waktu terus berjalan.",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Buktikan kemampuanmu!",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Segera kumpulkan ke {teacher}.",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Semangat!",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Biar tidak panik di akhir.",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Amankan nilaimu.",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Fokus 15 menit saja.",
+    "Santai banget kelihatannya, padahal '{title}' ({subject}) tinggal hitungan jam. Pasti beres!",
+  ],
+  disciplined: [
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Ayo kerjakan sekarang!",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Jangan ditunda lagi ya.",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Waktu terus berjalan.",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Buktikan kemampuanmu!",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Segera kumpulkan ke {teacher}.",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Semangat!",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Biar tidak panik di akhir.",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Amankan nilaimu.",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Fokus 15 menit saja.",
+    "⏱️ Target waktu presisi: '{title}' ({subject}) harus selesai sesuai jadwal dari {teacher}. Pasti beres!",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Ayo kerjakan sekarang!",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Jangan ditunda lagi ya.",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Waktu terus berjalan.",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Buktikan kemampuanmu!",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Segera kumpulkan ke {teacher}.",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Semangat!",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Biar tidak panik di akhir.",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Amankan nilaimu.",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Fokus 15 menit saja.",
+    "Sistem mencatat deviasi waktu pada '{title}' ({subject}). Segera eksekusi! Pasti beres!",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Ayo kerjakan sekarang!",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Jangan ditunda lagi ya.",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Waktu terus berjalan.",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Buktikan kemampuanmu!",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Segera kumpulkan ke {teacher}.",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Semangat!",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Biar tidak panik di akhir.",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Amankan nilaimu.",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Fokus 15 menit saja.",
+    "Kedisiplinan diuji pada '{title}' ({subject}). Patuhi batas waktu dari {teacher}. Pasti beres!",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Ayo kerjakan sekarang!",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Jangan ditunda lagi ya.",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Waktu terus berjalan.",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Buktikan kemampuanmu!",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Segera kumpulkan ke {teacher}.",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Semangat!",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Biar tidak panik di akhir.",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Amankan nilaimu.",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Fokus 15 menit saja.",
+    "Manajemen waktu {teacher} menuntut '{title}' ({subject}) selesai tepat jamnya. Pasti beres!",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Ayo kerjakan sekarang!",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Jangan ditunda lagi ya.",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Waktu terus berjalan.",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Buktikan kemampuanmu!",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Segera kumpulkan ke {teacher}.",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Semangat!",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Biar tidak panik di akhir.",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Amankan nilaimu.",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Fokus 15 menit saja.",
+    "Jadwal harian terganggu karena '{title}' ({subject}) belum tuntas. Pasti beres!",
+  ],
+  friendly: [
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Ayo kerjakan sekarang!",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Jangan ditunda lagi ya.",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Waktu terus berjalan.",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Buktikan kemampuanmu!",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Segera kumpulkan ke {teacher}.",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Semangat!",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Biar tidak panik di akhir.",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Amankan nilaimu.",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Fokus 15 menit saja.",
+    "Hai! Pesan ramah dari {teacher}: yuk cicil '{title}' ({subject}) pelan-pelan. Pasti beres!",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Ayo kerjakan sekarang!",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Jangan ditunda lagi ya.",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Waktu terus berjalan.",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Buktikan kemampuanmu!",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Segera kumpulkan ke {teacher}.",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Semangat!",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Biar tidak panik di akhir.",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Amankan nilaimu.",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Fokus 15 menit saja.",
+    "Halo, semangat ya! '{title}' ({subject}) pasti bisa kamu selesaikan hari ini. Pasti beres!",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Ayo kerjakan sekarang!",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Jangan ditunda lagi ya.",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Waktu terus berjalan.",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Buktikan kemampuanmu!",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Segera kumpulkan ke {teacher}.",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Semangat!",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Biar tidak panik di akhir.",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Amankan nilaimu.",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Fokus 15 menit saja.",
+    "🌻 Dukungan hangat dari {teacher} untuk tugas '{title}' ({subject}). Kamu pasti bisa! Pasti beres!",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Ayo kerjakan sekarang!",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Jangan ditunda lagi ya.",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Waktu terus berjalan.",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Buktikan kemampuanmu!",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Segera kumpulkan ke {teacher}.",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Semangat!",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Biar tidak panik di akhir.",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Amankan nilaimu.",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Fokus 15 menit saja.",
+    "Sedikit pengingat lembut: tugas '{title}' ({subject}) menunggu sentuhanmu. Pasti beres!",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Ayo kerjakan sekarang!",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Jangan ditunda lagi ya.",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Waktu terus berjalan.",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Buktikan kemampuanmu!",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Segera kumpulkan ke {teacher}.",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Semangat!",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Biar tidak panik di akhir.",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Amankan nilaimu.",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Fokus 15 menit saja.",
+    "Yuk luangkan 15 menit buat '{title}' ({subject}) supaya nanti lebih tenang. Pasti beres!",
+  ],
+  vocational: [
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Ayo kerjakan sekarang!",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Jangan ditunda lagi ya.",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Waktu terus berjalan.",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Buktikan kemampuanmu!",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Segera kumpulkan ke {teacher}.",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Semangat!",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Biar tidak panik di akhir.",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Amankan nilaimu.",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Fokus 15 menit saja.",
+    "🧰 Standar SOP bengkel: '{title}' ({subject}) belum lolos uji oleh {teacher}. Pasti beres!",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Ayo kerjakan sekarang!",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Jangan ditunda lagi ya.",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Waktu terus berjalan.",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Buktikan kemampuanmu!",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Segera kumpulkan ke {teacher}.",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Semangat!",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Biar tidak panik di akhir.",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Amankan nilaimu.",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Fokus 15 menit saja.",
+    "Laporan praktikum '{title}' ({subject}) wajib sesuai standar industri. Pasti beres!",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Ayo kerjakan sekarang!",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Jangan ditunda lagi ya.",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Waktu terus berjalan.",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Buktikan kemampuanmu!",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Segera kumpulkan ke {teacher}.",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Semangat!",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Biar tidak panik di akhir.",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Amankan nilaimu.",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Fokus 15 menit saja.",
+    "Instruktur {teacher} menagih lembar kerja '{title}' ({subject}) hari ini. Pasti beres!",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Ayo kerjakan sekarang!",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Jangan ditunda lagi ya.",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Waktu terus berjalan.",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Buktikan kemampuanmu!",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Segera kumpulkan ke {teacher}.",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Semangat!",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Biar tidak panik di akhir.",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Amankan nilaimu.",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Fokus 15 menit saja.",
+    "Quality control {subject}: '{title}' harus dirapikan sesuai instruksi bengkel. Pasti beres!",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Ayo kerjakan sekarang!",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Jangan ditunda lagi ya.",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Waktu terus berjalan.",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Buktikan kemampuanmu!",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Segera kumpulkan ke {teacher}.",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Semangat!",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Biar tidak panik di akhir.",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Amankan nilaimu.",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Fokus 15 menit saja.",
+    "Dunia kerja menuntut ketepatan '{title}' ({subject}). Segera selesaikan! Pasti beres!",
+  ],
+  silentkiller: [
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Ayo kerjakan sekarang!",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Jangan ditunda lagi ya.",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Waktu terus berjalan.",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Buktikan kemampuanmu!",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Segera kumpulkan ke {teacher}.",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Semangat!",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Biar tidak panik di akhir.",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Amankan nilaimu.",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Fokus 15 menit saja.",
+    "...Pemberitahuan senyap dari {teacher}: '{title}' ({subject}) dicatat. Pasti beres!",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Ayo kerjakan sekarang!",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Jangan ditunda lagi ya.",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Waktu terus berjalan.",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Buktikan kemampuanmu!",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Segera kumpulkan ke {teacher}.",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Semangat!",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Biar tidak panik di akhir.",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Amankan nilaimu.",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Fokus 15 menit saja.",
+    "Tanpa banyak bicara, {teacher} memantau status '{title}' ({subject}). Pasti beres!",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Ayo kerjakan sekarang!",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Jangan ditunda lagi ya.",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Waktu terus berjalan.",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Buktikan kemampuanmu!",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Segera kumpulkan ke {teacher}.",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Semangat!",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Biar tidak panik di akhir.",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Amankan nilaimu.",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Fokus 15 menit saja.",
+    "Waspada senyap: nilai {subject} untuk '{title}' menunggu keputusan. Pasti beres!",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Ayo kerjakan sekarang!",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Jangan ditunda lagi ya.",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Waktu terus berjalan.",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Buktikan kemampuanmu!",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Segera kumpulkan ke {teacher}.",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Semangat!",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Biar tidak panik di akhir.",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Amankan nilaimu.",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Fokus 15 menit saja.",
+    "Catatan rahasia {teacher}: '{title}' belum menunjukkan pergerakan. Pasti beres!",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Ayo kerjakan sekarang!",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Jangan ditunda lagi ya.",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Waktu terus berjalan.",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Buktikan kemampuanmu!",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Segera kumpulkan ke {teacher}.",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Semangat!",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Biar tidak panik di akhir.",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Amankan nilaimu.",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Fokus 15 menit saja.",
+    "Pembaruan sunyi dari sistem: tugas '{title}' ({subject}) mendekati deadline. Pasti beres!",
+  ],
+  motivator: [
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Ayo kerjakan sekarang!",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Jangan ditunda lagi ya.",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Waktu terus berjalan.",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Buktikan kemampuanmu!",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Segera kumpulkan ke {teacher}.",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Semangat!",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Biar tidak panik di akhir.",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Amankan nilaimu.",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Fokus 15 menit saja.",
+    "🏆 Bangkitlah! '{title}' ({subject}) adalah batu loncatan kesuksesanmu dari {teacher}. Pasti beres!",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Ayo kerjakan sekarang!",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Jangan ditunda lagi ya.",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Waktu terus berjalan.",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Buktikan kemampuanmu!",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Segera kumpulkan ke {teacher}.",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Semangat!",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Biar tidak panik di akhir.",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Amankan nilaimu.",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Fokus 15 menit saja.",
+    "Masa depanmu dibentuk dari ketuntasan '{title}' ({subject}). Semangat! Pasti beres!",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Ayo kerjakan sekarang!",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Jangan ditunda lagi ya.",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Waktu terus berjalan.",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Buktikan kemampuanmu!",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Segera kumpulkan ke {teacher}.",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Semangat!",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Biar tidak panik di akhir.",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Amankan nilaimu.",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Fokus 15 menit saja.",
+    "Tunjukkan mental juara pada tugas '{title}' ({subject}) bersama {teacher}! Pasti beres!",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Ayo kerjakan sekarang!",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Jangan ditunda lagi ya.",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Waktu terus berjalan.",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Buktikan kemampuanmu!",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Segera kumpulkan ke {teacher}.",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Semangat!",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Biar tidak panik di akhir.",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Amankan nilaimu.",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Fokus 15 menit saja.",
+    "Setiap hambatan di '{title}' ({subject}) bisa kamu taklukkan. Ayo bertindak! Pasti beres!",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Ayo kerjakan sekarang!",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Jangan ditunda lagi ya.",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Waktu terus berjalan.",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Buktikan kemampuanmu!",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Segera kumpulkan ke {teacher}.",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Semangat!",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Biar tidak panik di akhir.",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Amankan nilaimu.",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Fokus 15 menit saja.",
+    "Inspirasi dari {teacher}: taklukkan '{title}' ({subject}) hari ini juga! Pasti beres!",
+  ],
+  custom: [
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Ayo kerjakan sekarang!",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Jangan ditunda lagi ya.",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Waktu terus berjalan.",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Buktikan kemampuanmu!",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Segera kumpulkan ke {teacher}.",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Semangat!",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Biar tidak panik di akhir.",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Amankan nilaimu.",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Fokus 15 menit saja.",
+    "📣 Pesan khusus {teacher}: '{customText}' untuk tugas '{title}' ({subject}). Pasti beres!",
+    "Ingat pesan personalmu: '{customText}' ({title}). Ayo kerjakan sekarang!",
+    "Ingat pesan personalmu: '{customText}' ({title}). Jangan ditunda lagi ya.",
+    "Ingat pesan personalmu: '{customText}' ({title}). Waktu terus berjalan.",
+    "Ingat pesan personalmu: '{customText}' ({title}). Buktikan kemampuanmu!",
+    "Ingat pesan personalmu: '{customText}' ({title}). Segera kumpulkan ke {teacher}.",
+    "Ingat pesan personalmu: '{customText}' ({title}). Semangat!",
+    "Ingat pesan personalmu: '{customText}' ({title}). Biar tidak panik di akhir.",
+    "Ingat pesan personalmu: '{customText}' ({title}). Amankan nilaimu.",
+    "Ingat pesan personalmu: '{customText}' ({title}). Fokus 15 menit saja.",
+    "Ingat pesan personalmu: '{customText}' ({title}). Pasti beres!",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Ayo kerjakan sekarang!",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Jangan ditunda lagi ya.",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Waktu terus berjalan.",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Buktikan kemampuanmu!",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Segera kumpulkan ke {teacher}.",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Semangat!",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Biar tidak panik di akhir.",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Amankan nilaimu.",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Fokus 15 menit saja.",
+    "Instruksi khas {teacher}: '{customText}' - segera kerjakan '{title}'. Pasti beres!",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Ayo kerjakan sekarang!",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Jangan ditunda lagi ya.",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Waktu terus berjalan.",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Buktikan kemampuanmu!",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Segera kumpulkan ke {teacher}.",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Semangat!",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Biar tidak panik di akhir.",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Amankan nilaimu.",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Fokus 15 menit saja.",
+    "Catatan penting: '{customText}' (Tugas: '{title}'). Pasti beres!",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Ayo kerjakan sekarang!",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Jangan ditunda lagi ya.",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Waktu terus berjalan.",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Buktikan kemampuanmu!",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Segera kumpulkan ke {teacher}.",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Semangat!",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Biar tidak panik di akhir.",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Amankan nilaimu.",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Fokus 15 menit saja.",
+    "Pesan yang kamu buat: '{customText}' pada mapel {subject}. Pasti beres!",
+  ],
 };
-const extraTerrorClosers = [
-  "Ayo mulai sekarang!",
-  "Satu langkah kecil hari ini lebih baik daripada panik nanti.",
-  "Buka catatan dan laptopmu, lalu tuntaskan misinya!",
-  "Atur waktumu dan mulai eksekusi sesuai rencana.",
-  "Semangat, kamu pasti bisa menyelesaikannya!",
-  "Jangan ditunda lagi, mulai dari bagian paling mudah!",
-  "Amankan nilai rapormu detik ini juga!",
-  "Fokus 15 menit sekarang akan membuat perbedaan besar!",
-  "Tuntaskan sekarang agar waktumu lebih bebas nanti!",
-  "Buktikan bahwa kamu bisa tepat waktu!"
-];
-const extraTerrorMessages = Object.keys(extraTerrorBank).reduce(function(all, persona) {
-  const group = extraTerrorBank[persona];
-  all[persona] = [];
-  group.a.forEach(function(opener, i) {
-    group.b.forEach(function(core, j) {
-      extraTerrorClosers.forEach(function(closer, k) {
-        if ((i + j + k) % 2 === 0) {
-          all[persona].push(opener + ' ' + core + ' ' + closer);
-        }
-      });
-    });
-  });
-  return all;
-}, {});
+
 
 function generateTerrorMessage(task) {
   const persona = task.persona || 'killer';
-  const bank = extraTerrorMessages[persona] || extraTerrorMessages.killer;
+  const bank = extraTerrorBank[persona] || extraTerrorBank.killer;
   const message = bank[Math.floor(Math.random() * bank.length)];
   const customVal = (task.customText || '').trim() || ('Ayo segera selesaikan tugas ' + task.subject + ' tepat waktu!');
   return message
@@ -832,7 +1031,6 @@ function generateTerrorMessage(task) {
     .replace(/\{subject\}/g, task.subject || 'mata pelajaran')
     .replace(/\{customText\}/g, customVal);
 }
-
 function calculateSlack(task) {
   if (!task || !task.deadline) return 0;
   const deadlineTime = new Date(task.deadline).getTime();
@@ -932,18 +1130,30 @@ function syncTasksToServiceWorker() {
   }
 }
 
+function getDynamicIntervalMs(diffHours) {
+  if (diffHours <= 2) {
+    return 30 * 1000; // Mendekati deadline (<= 2 jam): muncul tiap 30 detik
+  } else {
+    return 60 * 1000; // Masih lama (> 2 jam): muncul tiap 1 menit
+  }
+}
+
 function triggerNotifications(task) {
   showScreenPopup(task);
   if (!('Notification' in window) || Notification.permission !== 'granted') return;
-  const bucket20s = Math.floor(Date.now() / 20000);
-  const windowKey = String(task.id) + ':' + bucket20s;
+  const targetTime = task.workSchedule ? new Date(task.workSchedule).getTime() : new Date(task.deadline).getTime();
+  const diffHours = (targetTime - Date.now()) / 3600000;
+  const intervalMs = getDynamicIntervalMs(diffHours);
+  const dynamicBucket = Math.floor(Date.now() / intervalMs);
+  const windowKey = String(task.id) + ':' + dynamicBucket;
   if (notifiedTaskWindows.has(windowKey)) return;
   notifiedTaskWindows.add(windowKey);
   if (notifiedTaskWindows.size > 200) {
     const first = notifiedTaskWindows.values().next().value;
     notifiedTaskWindows.delete(first);
   }
-  const title = '🚨 DOMIFECT: ' + task.teacher.toUpperCase() + ' (' + task.subject + ')';
+  const urgencyLabel = diffHours <= 2 ? '🚨 KRITIS (30s)' : '⏰ PENGINGAT (1m)';
+  const title = urgencyLabel + ' DOMIFECT: ' + task.teacher.toUpperCase() + ' (' + task.subject + ')';
   const body = generateTerrorMessage(task);
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready.then(function(reg) {
@@ -951,9 +1161,9 @@ function triggerNotifications(task) {
         body: body,
         icon: './icon-192.png',
         badge: './icon-192.png',
-        tag: 'task-' + task.id + '-' + bucket20s,
+        tag: 'task-' + task.id + '-' + dynamicBucket,
         renotify: true,
-        vibrate: [250, 100, 250],
+        vibrate: diffHours <= 2 ? [300, 100, 300] : [200, 100, 200],
         data: { url: './index.html' }
       });
     }).catch(function() {});
@@ -968,7 +1178,7 @@ function requestNotificationPermission() {
   Notification.requestPermission().then(function(p) {
     updateNotifStatusBadge();
     syncTasksToServiceWorker();
-    showToast(p === 'granted' ? '✅ Izin notifikasi aktif (cek tiap 20 detik + latar belakang).' : '⚠️ Izin notifikasi belum diberikan');
+    showToast(p === 'granted' ? '✅ Izin notifikasi aktif (kritis: 30s, normal: 1m).' : '⚠️ Izin notifikasi belum diberikan');
   }).catch(function() { showToast('Tidak dapat meminta izin notifikasi.'); });
 }
 
@@ -978,7 +1188,7 @@ function checkDueTasksAndNotify() {
     if (t.status === 'active') {
       const targetTime = t.workSchedule ? new Date(t.workSchedule).getTime() : new Date(t.deadline).getTime();
       const diffHours = (targetTime - now) / 3600000;
-      if (diffHours <= 0.5 && diffHours > -24) {
+      if (diffHours > -24) {
         triggerNotifications(t);
       }
     }
@@ -988,7 +1198,7 @@ function checkDueTasksAndNotify() {
 
 function startWatchdog() {
   checkDueTasksAndNotify();
-  setInterval(checkDueTasksAndNotify, 20000);
+  setInterval(checkDueTasksAndNotify, 30000); // detak watchdog tiap 30 detik agar sigap
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'visible') {
       checkDueTasksAndNotify();
