@@ -1,34 +1,41 @@
-const CACHE_NAME = 'domifect-pwa-v5';
+const CACHE_NAME = 'domifect-pwa-v8';
 const ASSETS = ['./', './index.html', './style.css', './app.js', './manifest.json', './icon-192.png', './icon-512.png'];
 
 let cachedActiveTasks = [];
 let bgTimer = null;
 
+function getDynamicIntervalMs(diffHours) {
+  if (diffHours <= 2) return 30 * 1000; // 30 detik jika kritis
+  return 60 * 1000;                    // 1 menit jika masih lama
+}
+
 function startSwBackgroundLoop() {
   if (bgTimer) return;
   bgTimer = setInterval(() => {
     checkSwTasks();
-  }, 20000);
+  }, 30000); // loop background tiap 30 detik
 }
 
 function checkSwTasks() {
   if (!cachedActiveTasks || !cachedActiveTasks.length) return;
   const now = Date.now();
-  const bucket20s = Math.floor(now / 20000);
   cachedActiveTasks.forEach(t => {
     if (t.status === 'active') {
       const targetTime = t.workSchedule ? new Date(t.workSchedule).getTime() : new Date(t.deadline).getTime();
       const diffHours = (targetTime - now) / 3600000;
-      if (diffHours <= 0.5 && diffHours > -24) {
-        const title = '🚨 DOMIFECT: ' + (t.teacher || 'GURU').toUpperCase() + ' (' + (t.subject || 'TUGAS') + ')';
-        const body = t.sampleMessage || ("Tugas '" + t.title + "' mendekati batas waktu! Segera kerjakan sekarang.");
+      if (diffHours > -24) {
+        const intervalMs = getDynamicIntervalMs(diffHours);
+        const dynamicBucket = Math.floor(now / intervalMs);
+        const urgencyLabel = diffHours <= 2 ? '🚨 KRITIS (30s)' : '⏰ PENGINGAT (1m)';
+        const title = urgencyLabel + ' DOMIFECT: ' + (t.teacher || 'GURU').toUpperCase() + ' (' + (t.subject || 'TUGAS') + ')';
+        const body = t.sampleMessage || ("Tugas '" + t.title + "' perlu segera dikerjakan.");
         self.registration.showNotification(title, {
           body: body,
           icon: './icon-192.png',
           badge: './icon-192.png',
-          tag: 'task-' + t.id + '-' + bucket20s,
+          tag: 'task-' + t.id + '-' + dynamicBucket,
           renotify: true,
-          vibrate: [250, 100, 250],
+          vibrate: diffHours <= 2 ? [300, 100, 300] : [200, 100, 200],
           data: { url: './index.html' }
         }).catch(() => {});
       }
