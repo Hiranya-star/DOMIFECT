@@ -17,7 +17,7 @@
   * *"Buatkan logika JavaScript untuk menghitung sisa waktu aman (slack time) dan menyusun urutan prioritas tugas berdasarkan bobot nilai rapor."*
   * *"Perbanyak variasi kalimat pengingat untuk 8 karakter guru (Killer, Sarkas, Disiplin, Ramah, Instruktur Bengkel/Lab, Silent Killer, Motivator, dan Custom) agar pesannya tidak terasa monoton."*
 * **Penyesuaian / Perbaikan Mandiri:**
-  * Pada versi awal, sistem pengecekan notifikasi berjalan setiap 45 detik. Saya melakukan penyesuaian agar interval pengecekan dipercepat menjadi setiap 20 detik serta menyinkronkan daftar tugas aktif ke *Service Worker* (`sw.js`) supaya pengingat tetap berupaya berjalan di latar belakang.
+  * Pada versi awal, sistem pengecekan notifikasi berjalan setiap 45 detik. Saya melakukan penyesuaian agar interval pengecekan dipercepat menjadi setiap 30 detik dan 1 menit serta menyinkronkan daftar tugas aktif ke *Service Worker* (`sw.js`) supaya pengingat tetap berupaya berjalan di latar belakang.
   * Saya juga menyesuaikan fitur *Generator Chat Izin Guru* dengan menambahkan alasan-alasan yang relevan dengan kondisi siswa sekolah (seperti izin sakit, kendala laptop/alat praktik, pemadaman listrik, dispensasi lomba/OSIS, hingga lembur PKL), serta menambahkan tombol bagikan rencana darurat (*Panic Button*) ke WhatsApp.
 
 ## 4. Panduan Penggunaan
