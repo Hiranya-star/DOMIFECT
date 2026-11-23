@@ -26,6 +26,7 @@
 3. Pilih menu **Buat Tugas**, lalu lengkapi formulir tugas (nama tugas, mata pelajaran, nama guru, bobot nilai rapor, karakter teror guru, jadwal mulai kerja, serta tenggat waktu/*deadline*).
 4. Buka menu **Tugas Aktif** untuk memantau progres pengerjaan, mencentang rincian langkah kecil (*micro-tasks*), atau menekan tombol **Fokus** untuk menggunakan pengatur waktu belajar.
 5. Gunakan menu **Domino** untuk melakukan simulasi dampak keterlambatan tugas, atau tekan **Panic Button** di halaman utama saat membutuhkan urutan pengerjaan tugas secara darurat.
+6. Pilih menu **Teror** untuk membantu memberikan notifikasi peringatan dari guru 
 
 ## 5. Identitas Pengembang
 * **Nama Lengkap:** Hiranya Jasmine Ramadhani
