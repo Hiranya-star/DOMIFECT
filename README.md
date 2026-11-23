@@ -2,7 +2,7 @@
 
 ## 1. Judul & Deskripsi
 * **Nama Produk Digital:** DOMIFECT (*Domino Effect Academic & Vocational Planner*)
-* **Latar Belakang Masalah:** Sebagai siswa SMA/SMK, saya sering melihat teman-teman maupun diri saya sendiri merasa kewalahan dan stres ketika tugas sekolah menumpuk akibat kebiasaan menunda waktu (*procrastination*). Padahal, keterlambatan pada satu tugas awal—seperti laporan praktikum, tugas proyek, maupun laporan bengkel—sering kali memicu efek berantai (efek domino) yang mengacaukan jadwal tugas mata pelajaran lainnya. Oleh karena itu, saya merancang aplikasi *planner* yang tidak sekadar mencatat daftar tugas, tetapi juga mampu menghitung sisa waktu aman (*slack time*), mengukur tingkat beban mental, serta memberikan pengingat dengan gaya bahasa berbagai karakter guru.
+* **Latar Belakang Masalah:** Sebagai siswa SMA/SMK, saya sering melihat teman-teman maupun diri saya sendiri merasa kewalahan dan stres ketika tugas sekolah menumpuk akibat kebiasaan menunda waktu pengerjaan tugas (*procrastination*). Padahal, keterlambatan pada satu tugas awal—seperti laporan praktikum, tugas proyek, maupun laporan bengkel—sering kali memicu efek berantai (efek domino) yang mengacaukan jadwal tugas mata pelajaran lainnya. Oleh karena itu, saya merancang aplikasi *planner* yang tidak sekadar mencatat daftar tugas, tetapi juga mampu menghitung sisa waktu aman (*slack time*), mengukur tingkat beban mental, serta memberikan pengingat dengan gaya bahasa berbagai karakter guru.
 * **Target Pengguna:** Siswa-siswi jenjang SMA dan SMK yang ingin meningkatkan kedisiplinan manajemen waktu, mencegah efek domino keterlambatan tugas, dan menjaga kestabilan nilai rapor.
 
 ## 2. Teknologi yang Digunakan
