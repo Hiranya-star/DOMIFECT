@@ -32,14 +32,14 @@
   * Saya melakukan uji coba langsung dengan mengisi formulir tugas, jadwal pelajaran, dan daftar perlengkapan di browser untuk memastikan data tersimpan dengan baik di `localStorage` dan tidak hilang saat halaman dimuat ulang.
 
 ## Tahap 3: Pemecahan Masalah & Penanganan Galat (*Debugging*)
-**Tujuan Interaksi:** Memperbaiki variasi kalimat pengingat yang cepat berulang, mempercepat interval kemunculan notifikasi menjadi setiap 20 detik, serta mengupayakan agar notifikasi tetap berjalan di latar belakang ponsel.
+**Tujuan Interaksi:** Memperbaiki variasi kalimat pengingat yang cepat berulang, mempercepat interval kemunculan notifikasi menjadi setiap 30 detik dan 1 menit, serta mengupayakan agar notifikasi tetap berjalan di latar belakang ponsel.
 
 * **Prompt / Pertanyaan yang Saya Ajukan ke AI:**
   * Setelah menguji aplikasi, saya menanyakan interval kemunculan notifikasi pengingat yang sebelumnya masih berjalan setiap 45 detik.
-  * Saya meminta AI memperbanyak variasi bank kalimat teror guru agar tidak terasa monoton, mengubah jeda pengecekan notifikasi menjadi setiap **20 detik**, mengatur agar notifikasinya dapat berjalan di latar belakang, dan mengemas ulang seluruh berkas yang telah diperbarui ke dalam format `.zip`.
+  * Saya meminta AI memperbanyak variasi bank kalimat teror guru agar tidak terasa monoton, mengubah jeda pengecekan notifikasi menjadi setiap **30 detik** dan **1 menit**, mengatur agar notifikasinya dapat berjalan di latar belakang, dan mengemas ulang seluruh berkas yang telah diperbarui ke dalam format `.zip`.
 * **Jawaban / Saran dari AI:**
   * AI memperluas isi `extraTerrorBank` dan `extraTerrorClosers` hingga menghasilkan **400 variasi kalimat unik untuk setiap karakter guru** (total 3.200 kombinasi pesan).
-  * AI mengubah interval pengecekan pada fungsi `startWatchdog()` di berkas `app.js` dari `45000` milidetik menjadi `20000` milidetik (20 detik), serta menambahkan sinkronisasi daftar tugas aktif ke berkas `sw.js` (*Service Worker*) agar pengecekan tetap berjalan di latar belakang.
+  * AI mengubah interval pengecekan pada fungsi `startWatchdog()` di berkas `app.js` dari `45000` milidetik menjadi `30000` milidetik (30 detik), serta menambahkan sinkronisasi daftar tugas aktif ke berkas `sw.js` (*Service Worker*) agar pengecekan tetap berjalan di latar belakang.
 * **Validasi & Modifikasi Mandiri:**
   * Saya mengekstrak berkas ZIP hasil pembaruan dan mengujinya menggunakan tombol **"Tes Pop-up Teror Guru"** pada halaman *Pusat Teror* untuk memastikan pop-up di layar maupun notifikasi browser muncul dengan kalimat yang bervariasi.
   * Saya memeriksa pengaturan izin notifikasi pada browser Chrome di ponsel agar notifikasi pop-up dapat tampil dengan lancar, serta memastikan seluruh berkas (`index.html`, `style.css`, `app.js`, `sw.js`, `manifest.json`, dan ikon) lengkap sebelum diunggah ke GitHub Pages.
@@ -54,5 +54,5 @@
 * **Validasi & Modifikasi Mandiri (Pemahaman Saya terhadap Kode):**
   1. **Perhitungan Sisa Waktu Aman (`calculateSlack`):** Saya memahami bahwa fungsi ini menghitung selisih waktu antara *deadline* dan waktu saat ini, kemudian dikurangi estimasi durasi pengerjaan tugas. Apabila hasilnya bernilai 0 atau negatif, tugas otomatis ditandai sebagai jalur kritis. Jika tugas tersebut bergantung pada tugas sebelumnya (`dependsOn`), perhitungannya akan mengikuti batas waktu tugas induknya sehingga efek dominonya dapat terdeteksi.
   2. **Penyusunan Kalimat Teror Guru (`generateTerrorMessage`):** Saya memahami bahwa program memilih kalimat secara acak (`Math.random()`) dari gabungan kalimat pembuka, inti, dan penutup sesuai karakter guru yang dipilih, lalu mengganti penanda `{teacher}`, `{title}`, dan `{subject}` dengan data tugas yang telah diinput.
-  3. **Mekanisme Notifikasi 20 Detik (`startWatchdog` & `sw.js`):** Saya memahami bahwa perintah `setInterval(..., 20000)` menjalankan pengecekan daftar tugas setiap 20 detik. Apabila terdapat tugas yang jadwal pengerjaannya kurang dari 30 menit lagi (`diffHours <= 0.5`), aplikasi akan menampilkan pop-up di layar sekaligus mengirimkan data tugas ke *Service Worker* agar notifikasi perangkat tetap muncul.
+  3. **Mekanisme Notifikasi 30 Detik (`startWatchdog` & `sw.js`):** Saya memahami bahwa perintah `setInterval(..., 20000)` menjalankan pengecekan daftar tugas setiap 30 detik. Apabila terdapat tugas yang jadwal pengerjaannya kurang dari 30 menit lagi (`diffHours <= 0.5`), aplikasi akan menampilkan pop-up di layar sekaligus mengirimkan data tugas ke *Service Worker* agar notifikasi perangkat tetap muncul.
   4. **Refleksi Pribadi:** Melalui pengembangan proyek ini, saya mempelajari cara memadukan HTML, CSS, dan JavaScript menjadi aplikasi web yang dapat dipasang di ponsel. Kecerdasan artifisial sangat membantu dalam menyusun kerangka kode dan mengatasi kendala teknis, sementara perumusan konsep kebutuhan siswa, pengujian fitur, serta pengecekan akhir tetap saya lakukan secara mandiri.
